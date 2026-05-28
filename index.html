@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Simpli Roofing – Frisco, TX | Expert Roof Replacement & Repair</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+  :root {
+    --navy:   #0b1d3a;
+    --navy2:  #0f2650;
+    --amber:  #f07c1a;
+    --amber2: #ffa040;
+    --white:  #ffffff;
+    --offwhite: #f5f7fa;
+    --gray:   #6b7280;
+    --light:  #e9ecf2;
+    --text:   #1a2744;
+    --shadow: 0 8px 40px rgba(11,29,58,.18);
+    --radius: 12px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+    background: rgba(11,29,58,.97);
+    backdrop-filter: blur(10px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+    border-bottom: 2px solid rgba(240,124,26,.35);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo .logo-icon {
+    width: 40px; height: 40px;
+    background: var(--amber);
+    clip-path: polygon(50% 0%, 100% 40%, 85% 100%, 15% 100%, 0% 40%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: white;
+  }
+  .nav-logo span {
+    font-size: 1.35rem; font-weight: 800; color: var(--white);
+    letter-spacing: -0.5px;
+  }
+  .nav-logo span em { color: var(--amber); font-style: normal; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,.8); text-decoration: none;
+    font-size: .82rem; font-weight: 600; letter-spacing: .06em;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--amber); }
+  .nav-cta {
+    background: var(--amber); color: var(--white);
+    padding: 10px 22px; border-radius: 6px;
+    font-size: .82rem; font-weight: 700;
+    text-decoration: none; letter-spacing: .04em;
+    text-transform: uppercase;
+    transition: background .2s, transform .15s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--amber2); transform: translateY(-1px); }
+
+  /* hamburger */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+  .hamburger span { width: 26px; height: 2.5px; background: var(--white); border-radius: 2px; transition: .3s; }
+
+  /* ─── HERO ────────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(160deg, rgba(11,29,58,.92) 40%, rgba(240,124,26,.18) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 30 L30 0 L60 30 L30 60Z' fill='none' stroke='rgba(255,255,255,.04)' stroke-width='1'/%3E%3C/svg%3E");
+    background-color: var(--navy);
+    display: flex; align-items: center;
+    padding: 100px 5% 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero-shapes {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .hero-shapes::before {
+    content: '';
+    position: absolute; top: -120px; right: -80px;
+    width: 580px; height: 580px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,124,26,.18) 0%, transparent 70%);
+  }
+  .hero-shapes::after {
+    content: '';
+    position: absolute; bottom: -80px; left: 10%;
+    width: 340px; height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 70%);
+  }
+  .hero-inner {
+    max-width: 720px;
+    position: relative; z-index: 2;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(240,124,26,.15);
+    border: 1px solid rgba(240,124,26,.4);
+    color: var(--amber2);
+    font-size: .78rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; padding: 7px 16px; border-radius: 50px;
+    margin-bottom: 26px;
+  }
+  .hero-badge i { font-size: .7rem; }
+  h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900; line-height: 1.1;
+    color: var(--white);
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+  h1 .accent { color: var(--amber); }
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: rgba(255,255,255,.75);
+    font-weight: 400; line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 40px;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--amber); color: var(--white);
+    padding: 16px 34px; border-radius: 8px;
+    font-size: 1rem; font-weight: 800;
+    text-decoration: none; letter-spacing: .03em;
+    box-shadow: 0 6px 24px rgba(240,124,26,.4);
+    transition: all .2s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-primary:hover { background: var(--amber2); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(240,124,26,.5); }
+  .btn-ghost {
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.4); color: var(--white);
+    padding: 14px 30px; border-radius: 8px;
+    font-size: 1rem; font-weight: 700;
+    text-decoration: none;
+    transition: all .2s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+  .hero-stats {
+    margin-top: 56px;
+    display: flex; gap: 40px; flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 36px;
+  }
+  .stat-num {
+    font-size: 2.2rem; font-weight: 900; color: var(--amber);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: .75rem; color: rgba(255,255,255,.6);
+    font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ─── SECTION COMMON ──────────────────────────────── */
+  section { padding: 90px 5%; }
+  .section-label {
+    display: inline-block;
+    color: var(--amber);
+    font-size: .75rem; font-weight: 800; letter-spacing: .14em;
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-weight: 900; color: var(--text);
+    line-height: 1.15; letter-spacing: -.5px;
+    margin-bottom: 16px;
+  }
+  .section-title.light { color: var(--white); }
+  .section-sub {
+    font-size: 1rem; color: var(--gray);
+    line-height: 1.7; max-width: 580px;
+  }
+  .section-sub.light { color: rgba(255,255,255,.7); }
+  .section-head { margin-bottom: 56px; }
+  .section-head.center { text-align: center; }
+  .section-head.center .section-sub { margin: 0 auto; }
+
+  /* ─── SERVICES ────────────────────────────────────── */
+  #services { background: var(--offwhite); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 36px 30px;
+    border: 1px solid var(--light);
+    box-shadow: 0 2px 16px rgba(11,29,58,.06);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--amber), var(--amber2));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .3s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--amber); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon {
+    width: 56px; height: 56px;
+    background: rgba(240,124,26,.1);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: var(--amber);
+    margin-bottom: 22px;
+    transition: background .25s;
+  }
+  .service-card:hover .service-icon { background: var(--amber); color: var(--white); }
+  .service-card h3 {
+    font-size: 1.1rem; font-weight: 800; color: var(--text);
+    margin-bottom: 12px;
+  }
+  .service-card p {
+    font-size: .88rem; color: var(--gray); line-height: 1.7;
+  }
+
+  /* ─── WHY CHOOSE US ───────────────────────────────── */
+  #why {
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  #why::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='1.5' fill='rgba(255,255,255,.05)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+  }
+  .trust-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--radius);
+    padding: 36px 28px;
+    transition: background .25s, border-color .25s;
+  }
+  .trust-card:hover { background: rgba(255,255,255,.09); border-color: rgba(240,124,26,.5); }
+  .trust-card .ti {
+    font-size: 2rem; color: var(--amber);
+    margin-bottom: 18px;
+    display: block;
+  }
+  .trust-card h3 {
+    font-size: 1.05rem; font-weight: 800; color: var(--white);
+    margin-bottom: 10px;
+  }
+  .trust-card p { font-size: .87rem; color: rgba(255,255,255,.65); line-height: 1.7; }
+
+  /* ─── HOW IT WORKS ────────────────────────────────── */
+  #how { background: var(--white); }
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .steps-row::before {
+    content: '';
+    position: absolute; top: 52px; left: calc(16.66% + 28px); right: calc(16.66% + 28px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--amber), var(--amber2));
+  }
+  .step {
+    text-align: center; padding: 0 20px;
+    position: relative;
+  }
+  .step-num {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 1.6rem; font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px;
+    position: relative; z-index: 1;
+    border: 4px solid var(--amber);
+    transition: background .25s;
+  }
+  .step:hover .step-num { background: var(--amber); }
+  .step h3 {
+    font-size: 1.1rem; font-weight: 800; color: var(--text);
+    margin-bottom: 12px;
+  }
+  .step p { font-size: .87rem; color: var(--gray); line-height: 1.7; }
+  .step-icon {
+    font-size: 1.4rem; color: var(--amber); margin-bottom: 12px;
+    display: block;
+  }
+
+  /* ─── TESTIMONIALS ────────────────────────────────── */
+  #testimonials { background: var(--offwhite); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .review-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    border: 1px solid var(--light);
+    box-shadow: 0 2px 12px rgba(11,29,58,.06);
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .review-card .quote-mark {
+    font-family: 'Lora', serif; font-size: 4rem;
+    color: var(--amber); opacity: .25;
+    line-height: 1; position: absolute; top: 16px; left: 24px;
+  }
+  .stars { color: #f5a623; font-size: .9rem; margin-bottom: 16px; margin-top: 10px; }
+  .review-text {
+    font-size: .92rem; color: #444; line-height: 1.75;
+    font-style: italic; margin-bottom: 22px;
+  }
+  .reviewer {
+    display: flex; align-items: center; gap: 14px;
+  }
+  .reviewer-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--white); font-weight: 800; font-size: .95rem;
+    flex-shrink: 0;
+  }
+  .reviewer-name { font-weight: 700; font-size: .9rem; color: var(--text); }
+  .reviewer-meta { font-size: .76rem; color: var(--gray); margin-top: 2px; }
+  .google-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 50px; padding: 4px 12px 4px 8px;
+    font-size: .72rem; font-weight: 600; color: var(--gray);
+    margin-top: 4px;
+  }
+  .google-badge i { color: #4285f4; }
+
+  /* full review list table */
+  #all-reviews { background: var(--white); padding: 70px 5%; }
+  .reviews-marquee-wrap { overflow: hidden; position: relative; }
+  .reviews-marquee-wrap::after {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 80px;
+    background: linear-gradient(to left, var(--white), transparent);
+    pointer-events: none; z-index: 2;
+  }
+  .reviews-marquee-wrap::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 80px;
+    background: linear-gradient(to right, var(--white), transparent);
+    pointer-events: none; z-index: 2;
+  }
+  .reviews-marquee {
+    display: flex; gap: 18px;
+    animation: marquee 36s linear infinite;
+    width: max-content;
+  }
+  .reviews-marquee:hover { animation-play-state: paused; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .mini-review {
+    background: var(--offwhite);
+    border: 1px solid var(--light);
+    border-radius: 10px;
+    padding: 18px 20px;
+    min-width: 260px; max-width: 280px;
+    flex-shrink: 0;
+  }
+  .mini-review .stars { margin-bottom: 8px; font-size: .8rem; margin-top: 0; }
+  .mini-review p { font-size: .82rem; color: #555; line-height: 1.6; margin-bottom: 10px; font-style: italic; }
+  .mini-review .name { font-size: .78rem; font-weight: 700; color: var(--text); }
+
+  /* ─── CONTACT / CTA ───────────────────────────────── */
+  #contact {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a6b 100%);
+    position: relative; overflow: hidden;
+  }
+  #contact::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,124,26,.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px; align-items: start;
+  }
+  .contact-info h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 900; color: var(--white); margin-bottom: 16px;
+    line-height: 1.15;
+  }
+  .contact-info h2 span { color: var(--amber); }
+  .contact-info p {
+    color: rgba(255,255,255,.7); font-size: .95rem; line-height: 1.7;
+    margin-bottom: 36px;
+  }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    margin-bottom: 22px;
+  }
+  .contact-item .ci {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: rgba(240,124,26,.15);
+    border: 1px solid rgba(240,124,26,.3);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: var(--amber);
+  }
+  .contact-item h4 {
+    font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.5);
+    letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .contact-item a, .contact-item span {
+    color: var(--white); font-weight: 600; font-size: .95rem;
+    text-decoration: none;
+  }
+  .contact-item a:hover { color: var(--amber); }
+
+  /* form */
+  .contact-form {
+    background: var(--white);
+    border-radius: 16px; padding: 42px 38px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+  }
+  .contact-form h3 {
+    font-size: 1.3rem; font-weight: 800; color: var(--text);
+    margin-bottom: 26px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label {
+    display: block; font-size: .78rem; font-weight: 700;
+    color: var(--text); letter-spacing: .05em; text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 13px 16px;
+    border: 1.5px solid var(--light);
+    border-radius: 8px; font-size: .9rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text); background: var(--offwhite);
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--amber);
+    box-shadow: 0 0 0 3px rgba(240,124,26,.15);
+    background: var(--white);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-submit {
+    width: 100%;
+    background: var(--amber); color: var(--white);
+    border: none; padding: 16px;
+    border-radius: 8px; font-size: 1rem; font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer; letter-spacing: .04em;
+    box-shadow: 0 4px 20px rgba(240,124,26,.35);
+    transition: all .2s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .form-submit:hover { background: var(--amber2); transform: translateY(-1px); }
+  .form-note {
+    text-align: center; font-size: .76rem; color: var(--gray);
+    margin-top: 14px;
+  }
+
+  /* success message */
+  .form-success {
+    display: none; text-align: center; padding: 30px;
+  }
+  .form-success i { font-size: 3rem; color: #22c55e; margin-bottom: 14px; display: block; }
+  .form-success h4 { font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .form-success p { font-size: .9rem; color: var(--gray); }
+
+  /* ─── CTA BANNER ──────────────────────────────────── */
+  #cta-banner {
+    background: linear-gradient(90deg, var(--amber) 0%, #e06010 100%);
+    padding: 40px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .cta-banner-text h3 {
+    font-size: 1.5rem; font-weight: 900; color: var(--white);
+    margin-bottom: 4px;
+  }
+  .cta-banner-text p { color: rgba(255,255,255,.85); font-size: .9rem; }
+  .btn-white {
+    background: var(--white); color: var(--amber);
+    padding: 14px 30px; border-radius: 8px;
+    font-weight: 800; font-size: .95rem;
+    text-decoration: none; white-space: nowrap;
+    transition: all .2s;
+  }
+  .btn-white:hover { background: var(--navy); color: var(--white); }
+
+  /* ─── FOOTER ──────────────────────────────────────── */
+  footer {
+    background: #080f1e;
+    padding: 60px 5% 30px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    padding-bottom: 48px;
+  }
+  .footer-brand .fl { font-size: 1.4rem; font-weight: 900; color: var(--white); }
+  .footer-brand .fl em { color: var(--amber); font-style: normal; }
+  .footer-brand p {
+    font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.7;
+    margin-top: 14px; max-width: 260px;
+  }
+  .footer-social { display: flex; gap: 12px; margin-top: 20px; }
+  .footer-social a {
+    width: 36px; height: 36px;
+    border-radius: 8px; background: rgba(255,255,255,.07);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,.6); font-size: .9rem;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+  }
+  .footer-social a:hover { background: var(--amber); color: var(--white); }
+  .footer-col h4 {
+    font-size: .78rem; font-weight: 800; color: var(--white);
+    letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,.5); text-decoration: none;
+    font-size: .86rem; transition: color .2s;
+  }
+  .footer-col ul li a:hover { color: var(--amber); }
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.35); }
+  .footer-bottom-links { display: flex; gap: 24px; }
+  .footer-bottom-links a { font-size: .78rem; color: rgba(255,255,255,.35); text-decoration: none; }
+  .footer-bottom-links a:hover { color: var(--amber); }
+
+  /* ─── SCROLL REVEAL ───────────────────────────────── */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── MOBILE ──────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    nav.open .nav-links {
+      display: flex; flex-direction: column;
+      position: fixed; top: 70px; left: 0; right: 0;
+      background: var(--navy); padding: 24px 5%;
+      gap: 16px; border-top: 1px solid rgba(255,255,255,.08);
+    }
+    nav.open .nav-cta {
+      display: block;
+      margin: 0 5% 24px; text-align: center;
+    }
+    nav.open ~ * { pointer-events: none; }
+
+    .steps-row { grid-template-columns: 1fr; gap: 40px; }
+    .steps-row::before { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+    .hero-stats { gap: 28px; }
+    .contact-form { padding: 28px 22px; }
+    #cta-banner { text-align: center; flex-direction: column; }
+  }
+  @media (max-width: 500px) {
+    section { padding: 60px 5%; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">
+    <div class="logo-icon"><i class="fas fa-house"></i></div>
+    <span>Simpli<em>Roofing</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#how">Process</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Free Estimate</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-shapes"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <i class="fas fa-map-marker-alt"></i>
+      Serving Frisco & North Texas
+    </div>
+    <h1>
+      Your Roof,<br>
+      Done <span class="accent">Right.</span><br>
+      Done <span class="accent">Simply.</span>
+    </h1>
+    <p class="hero-sub">
+      Frisco's trusted roofing contractor — from storm damage claims to full replacements. 
+      We handle the insurance process so you don't have to worry about a thing.
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">
+        <i class="fas fa-clipboard-check"></i> Get Your Free Estimate
+      </a>
+      <a href="#how" class="btn-ghost">
+        <i class="fas fa-play-circle"></i> How It Works
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Years in Business</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Roofs Installed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5★</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Insurance Guided</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ──────────────────────────────────────── -->
+<section id="services">
+  <div class="section-head center reveal">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-title">Full-Service Roofing Solutions</h2>
+    <p class="section-sub">
+      From emergency repairs to complete replacements — we bring quality craftsmanship and clear communication to every project.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-house-damage"></i></div>
+      <h3>Roof Replacement</h3>
+      <p>Full tear-off and reinstallation using premium materials. We guide you through material selection and handle the entire process from start to finish.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-tools"></i></div>
+      <h3>Roof Repair</h3>
+      <p>Targeted repairs for leaks, damaged shingles, flashing issues, and more. We diagnose the problem right and fix it right the first time.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-cloud-bolt"></i></div>
+      <h3>Storm Damage & Insurance</h3>
+      <p>Hail and wind damage specialists. We walk you through the insurance claim process step-by-step and advocate for your full coverage.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-water"></i></div>
+      <h3>Gutter Installation</h3>
+      <p>New gutter systems and replacements that protect your foundation and landscaping. Seamless gutters custom-fitted to your home.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-search"></i></div>
+      <h3>Free Roof Inspection</h3>
+      <p>No pressure, no obligation. Our certified inspectors assess your roof's condition and provide an honest, detailed report of any issues found.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon"><i class="fas fa-building"></i></div>
+      <h3>Commercial Roofing</h3>
+      <p>Flat roof systems, commercial repairs, and preventative maintenance programs for businesses and multi-family properties across North Texas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY CHOOSE US ──────────────────────────────────── -->
+<section id="why">
+  <div class="section-head center reveal">
+    <span class="section-label" style="color:var(--amber)">Why Simpli Roofing</span>
+    <h2 class="section-title light">Built on Trust. Backed by Results.</h2>
+    <p class="section-sub light">
+      We've built our reputation one roof at a time in Frisco and across North Texas.
+    </p>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card reveal">
+      <i class="fas fa-shield-halved ti"></i>
+      <h3>Licensed &amp; Fully Insured</h3>
+      <p>Every job is carried out by licensed professionals with full liability coverage and workers' compensation — protecting you, your home, and our crew.</p>
+    </div>
+    <div class="trust-card reveal">
+      <i class="fas fa-tag ti"></i>
+      <h3>Free Estimates, No Pressure</h3>
+      <p>We provide detailed, transparent estimates at zero cost with no strings attached. You'll know exactly what you're getting before we touch a single shingle.</p>
+    </div>
+    <div class="trust-card reveal">
+      <i class="fas fa-medal ti"></i>
+      <h3>Workmanship Warranty</h3>
+      <p>We stand behind our craft. Our roofs are installed to last — backed by a workmanship warranty in addition to manufacturer material warranties.</p>
+    </div>
+    <div class="trust-card reveal">
+      <i class="fas fa-file-invoice-dollar ti"></i>
+      <h3>Insurance Claim Experts</h3>
+      <p>From the first call to the final check, we've helped hundreds of homeowners navigate the insurance process and maximize their approved claims.</p>
+    </div>
+    <div class="trust-card reveal">
+      <i class="fas fa-broom ti"></i>
+      <h3>Spotless Job Sites</h3>
+      <p>Our crew cleans up completely after every installation — including magnetic nail sweeps. We leave your property better than we found it.</p>
+    </div>
+    <div class="trust-card reveal">
+      <i class="fas fa-handshake ti"></i>
+      <h3>Local, Family-Owned</h3>
+      <p>We're your neighbors in Frisco and the DFW area. We treat every homeowner's project like it's our own — because this community is our home too.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ───────────────────────────────────── -->
+<section id="how">
+  <div class="section-head center reveal">
+    <span class="section-label">The Process</span>
+    <h2 class="section-title">Simple. Transparent. Done Right.</h2>
+    <p class="section-sub">
+      We've streamlined the roofing experience so there are no surprises — just results you can count on.
+    </p>
+  </div>
+  <div class="steps-row">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <i class="fas fa-magnifying-glass step-icon"></i>
+      <h3>Free Inspection</h3>
+      <p>We schedule a convenient time to thoroughly inspect your roof. We assess damage, document everything, and give you an honest recommendation — no upselling.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <i class="fas fa-file-signature step-icon"></i>
+      <h3>Estimate &amp; Approval</h3>
+      <p>We provide a detailed written estimate. If insurance is involved, we guide you through the claims process and work directly with your adjuster.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <i class="fas fa-hard-hat step-icon"></i>
+      <h3>Expert Installation</h3>
+      <p>Our experienced crew completes your roof efficiently and professionally — then we do a final walkthrough together to make sure you're 100% satisfied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURED TESTIMONIALS ─────────────────────────── -->
+<section id="testimonials">
+  <div class="section-head center reveal">
+    <span class="section-label">Real Reviews</span>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <p class="section-sub">
+      Don't take our word for it — here's what Frisco homeowners are saying on Google.
+    </p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">
+        Alex did a fantastic job walking me through the insurance process after hail damage. He was patient and knowledgeable. His crew installed a great looking roof as well.
+      </p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">W</div>
+        <div>
+          <div class="reviewer-name">Walker Sinclair</div>
+          <div class="reviewer-meta">5 months ago</div>
+          <div class="google-badge"><i class="fab fa-google"></i> Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">
+        Simpli Roofing made everything simple — true to the name. These guys are professional and genuinely interested in doing what's best for the client. They fought for me to get more money out of my claim. Huge thanks!
+      </p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">I</div>
+        <div>
+          <div class="reviewer-name">Isaac Vanhorn</div>
+          <div class="reviewer-meta">2 years ago</div>
+          <div class="google-badge"><i class="fab fa-google"></i> Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">
+        Simpli Roofing helped me get my roof covered by insurance and it was a flawless experience. The install was effortless and the cleanup was remarkable. Highly recommend.
+      </p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">C</div>
+        <div>
+          <div class="reviewer-name">C.D. Meloni</div>
+          <div class="reviewer-meta">3 years ago</div>
+          <div class="google-badge"><i class="fab fa-google"></i> Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">
+        Alex communicated everything clearly and was in touch and helpful from start to finish. Simpli Roofing made the whole process easy. Would definitely recommend.
+      </p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">N</div>
+        <div>
+          <div class="reviewer-name">North Texas Vintage</div>
+          <div class="reviewer-meta">2 years ago</div>
+          <div class="google-badge"><i class="fab fa-google"></i> Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">
+        Paul was very professional throughout the entire process. The quality of materials was top notch! He came back after installation to make sure everything was done to the highest of standards.
+      </p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">K</div>
+        <div>
+          <div class="reviewer-name">Kevin Turpin</div>
+          <div class="reviewer-meta">3 years ago · Local Guide</div>
+          <div class="google-badge"><i class="fab fa-google"></i> Google Review</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal">
+      <div class="quote-mark">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">
+        Alex helped my husband and I from the beginning — filing the claim with insurance and getting the roof covered entirely. From there it was a seamless process scheduling our install. Amazing team.
+      </p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">L</div>
+        <div>
+          <div class="reviewer-name">Lupe Saavedra</div>
+          <div class="reviewer-meta">3 years ago</div>
+          <div class="google-badge"><i class="fab fa-google"></i> Google Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ALL REVIEWS MARQUEE ────────────────────────────── -->
+<section id="all-reviews">
+  <div class="section-head center reveal">
+    <span class="section-label">More Happy Customers</span>
+    <h2 class="section-title">Trusted by Our Community</h2>
+  </div>
+  <div class="reviews-marquee-wrap">
+    <div class="reviews-marquee" id="marquee">
+      <!-- First set -->
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Bryan was awesome from start to finish. Amazing finished product."</p>
+        <div class="name">— Joe Mees</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Alex n the crew was very respectful, professional, on time every time. Very informative and knowledgeable."</p>
+        <div class="name">— Vinon Larry</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Simpli Roofing have done the best work on installing roof and gutter for the whole house."</p>
+        <div class="name">— Saunak Desai</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"They completely handled everything from start to finish, including assisting in filing the claim."</p>
+        <div class="name">— Stephanie Turner</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Bryan was amazing. Fit my timeline. Went out of their way for me. No clean-up or mess."</p>
+        <div class="name">— Wendy Lewis</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Excellent service, great customer service, and timely. We are pleased with the product."</p>
+        <div class="name">— John Edmun</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Simpli Roofing handled storm damages on two of my rental properties. Alex was very professional from start to finish."</p>
+        <div class="name">— Jordy Blatt</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"They got the roof done within a day. Professional and always kept me posted about the progress."</p>
+        <div class="name">— Michael Wei</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Paul always stayed in touch. The roof looks fantastic. I'd give more than just five stars!"</p>
+        <div class="name">— Dmytro Pohrebniuk</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Our church is very thankful to Alex for helping us complete this project."</p>
+        <div class="name">— Greg</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Ask for Alex — he is wonderful and went out of his way many times, including dealing with insurance."</p>
+        <div class="name">— Deborah Fleishman</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"They were fast and very responsive to me. I will definitely be referring them to others."</p>
+        <div class="name">— Getliketrinity</div>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Bryan was awesome from start to finish. Amazing finished product."</p>
+        <div class="name">— Joe Mees</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Alex n the crew was very respectful, professional, on time every time. Very informative and knowledgeable."</p>
+        <div class="name">— Vinon Larry</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Simpli Roofing have done the best work on installing roof and gutter for the whole house."</p>
+        <div class="name">— Saunak Desai</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"They completely handled everything from start to finish, including assisting in filing the claim."</p>
+        <div class="name">— Stephanie Turner</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Bryan was amazing. Fit my timeline. Went out of their way for me. No clean-up or mess."</p>
+        <div class="name">— Wendy Lewis</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Excellent service, great customer service, and timely. We are pleased with the product."</p>
+        <div class="name">— John Edmun</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Simpli Roofing handled storm damages on two of my rental properties. Alex was very professional."</p>
+        <div class="name">— Jordy Blatt</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"They got the roof done within a day. Professional and always kept me posted about the progress."</p>
+        <div class="name">— Michael Wei</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Paul always stayed in touch. The roof looks fantastic. I'd give more than just five stars!"</p>
+        <div class="name">— Dmytro Pohrebniuk</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Our church is very thankful to Alex for helping us complete this project."</p>
+        <div class="name">— Greg</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"Ask for Alex — he is wonderful and went out of his way many times, including dealing with insurance."</p>
+        <div class="name">— Deborah Fleishman</div>
+      </div>
+      <div class="mini-review">
+        <div class="stars">★★★★★</div>
+        <p>"They were fast and very responsive to me. I will definitely be referring them to others."</p>
+        <div class="name">— Getliketrinity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─────────────────────────────────────────── -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <span class="section-label" style="color:var(--amber)">Get In Touch</span>
+      <h2>Ready for a <span>Free Estimate?</span></h2>
+      <p>
+        Fill out the form and one of our roofing specialists will reach out within 24 hours. 
+        No pressure, no obligation — just expert advice.
+      </p>
+
+      <div class="contact-item">
+        <div class="ci"><i class="fas fa-phone"></i></div>
+        <div>
+          <h4>Phone</h4>
+          <a href="tel:+1">Call Us Today</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci"><i class="fas fa-envelope"></i></div>
+        <div>
+          <h4>Email</h4>
+          <a href="mailto:your@email.com">your@email.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <h4>Service Area</h4>
+          <span>Frisco, TX &amp; All of North Texas</span>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="ci"><i class="fas fa-clock"></i></div>
+        <div>
+          <h4>Hours</h4>
+          <span>Mon–Sat: 8 AM – 6 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal" id="contact-form-wrapper">
+      <h3><i class="fas fa-clipboard-check" style="color:var(--amber);margin-right:10px"></i>Request Your Free Estimate</h3>
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(972) 555-0123" required />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select required>
+            <option value="" disabled selected>Select a service…</option>
+            <option>Roof Replacement</option>
+            <option>Roof Repair</option>
+            <option>Storm / Hail Damage</option>
+            <option>Gutter Installation</option>
+            <option>Free Inspection</option>
+            <option>Commercial Roofing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message (optional)</label>
+          <textarea placeholder="Tell us a bit about your project or concerns…"></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          <i class="fas fa-paper-plane"></i> Send My Request
+        </button>
+        <p class="form-note"><i class="fas fa-lock" style="font-size:.7rem"></i> Your information is private and will never be shared.</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <i class="fas fa-circle-check"></i>
+        <h4>Request Received!</h4>
+        <p>Thank you — a Simpli Roofing specialist will be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ─────────────────────────────────────── -->
+<div id="cta-banner">
+  <div class="cta-banner-text">
+    <h3>Storm damage? Don't wait.</h3>
+    <p>Texas weather moves fast — so do we. Get a free inspection today before filing your claim.</p>
+  </div>
+  <a href="#contact" class="btn-white">Get Free Inspection →</a>
+</div>
+
+<!-- ─── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fl">Simpli<em>Roofing</em></div>
+      <p>Frisco's trusted roofing contractor. Quality installs, honest service, and expert insurance guidance — every single time.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+        <a href="#" aria-label="Nextdoor"><i class="fas fa-house-chimney"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Roof Replacement</a></li>
+        <li><a href="#services">Roof Repair</a></li>
+        <li><a href="#services">Storm Damage</a></li>
+        <li><a href="#services">Gutter Installation</a></li>
+        <li><a href="#services">Free Inspection</a></li>
+        <li><a href="#services">Commercial Roofing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#how">Our Process</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Service Area</h4>
+      <ul>
+        <li><a href="#">Frisco, TX</a></li>
+        <li><a href="#">Plano, TX</a></li>
+        <li><a href="#">McKinney, TX</a></li>
+        <li><a href="#">Allen, TX</a></li>
+        <li><a href="#">Prosper, TX</a></li>
+        <li><a href="#">Celina, TX</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Simpli Roofing LLC · Frisco, Texas · All Rights Reserved</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── JS ─────────────────────────────────────────────── -->
+<script>
+  // Hamburger menu
+  const nav = document.getElementById('navbar');
+  document.getElementById('hamburger').addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => nav.classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // Stagger siblings
+        const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+        const idx = siblings.indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, idx * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Navbar shrink on scroll
+  window.addEventListener('scroll', () => {
+    nav.style.height = window.scrollY > 60 ? '60px' : '70px';
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  // Active nav link highlight
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--amber)' : '';
+    });
+  });
+</script>
+</body>
+</html>
